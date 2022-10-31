@@ -13,6 +13,27 @@ namespace Polyform
 
         private IWindow _window;
 
+        private void OnLoad()
+        {
+
+
+
+        }
+
+        private void OnRender(double dt)
+        {
+
+
+
+        }
+
+        private void OnUpdate(double dt)
+        {
+
+
+
+        }
+
         internal Client()
         {
 
@@ -21,6 +42,10 @@ namespace Polyform
             windowOptions.Title = "Polyform";
 
             _window = Window.Create(windowOptions);
+
+            _window.Load += OnLoad;
+            _window.Render += OnRender;
+            _window.Update += OnUpdate;
 
         }
 
