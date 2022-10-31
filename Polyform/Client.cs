@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Polyform.Rendering;
+using Silk.NET.Input;
 using Silk.NET.Maths;
 using Silk.NET.Windowing;
 
@@ -20,6 +21,10 @@ namespace Polyform
         {
 
             _renderer = new Renderer(_window);
+
+            IInputContext input = _window.CreateInput();
+
+            input.Keyboards[0].IsKeyPressed();
 
         }
 
