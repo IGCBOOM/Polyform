@@ -1,0 +1,19 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Polyform.Game
+{
+    internal class LocalPlayer : Player
+    {
+
+        internal void Step(/*inputs*/)
+        {
+
+        }
+
+
+    }
+}
