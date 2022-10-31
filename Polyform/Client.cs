@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Polyform.Rendering;
 using Silk.NET.Maths;
 using Silk.NET.Windowing;
 
@@ -12,25 +13,27 @@ namespace Polyform
     {
 
         private IWindow _window;
+        
+        private Renderer _renderer;
 
         private void OnLoad()
         {
 
-
-
-        }
-
-        private void OnRender(double dt)
-        {
-
-
+            _renderer = new Renderer(_window);
 
         }
 
         private void OnUpdate(double dt)
         {
 
+            _renderer.Update(dt);
 
+        }
+
+        private void OnRender(double dt)
+        {
+
+            _renderer.Render(dt);
 
         }
 
@@ -44,8 +47,8 @@ namespace Polyform
             _window = Window.Create(windowOptions);
 
             _window.Load += OnLoad;
-            _window.Render += OnRender;
             _window.Update += OnUpdate;
+            _window.Render += OnRender;
 
         }
 
