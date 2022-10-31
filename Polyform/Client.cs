@@ -12,9 +12,9 @@ namespace Polyform
     internal class Client
     {
 
-        private IWindow _window;
+        private readonly IWindow _window;
         
-        private Renderer _renderer;
+        private Renderer? _renderer;
 
         private void OnLoad()
         {
@@ -26,21 +26,21 @@ namespace Polyform
         private void OnResize(Vector2D<int> newSize)
         {
 
-            _renderer.Resize(newSize);
+            _renderer?.Resize(newSize);
 
         }
 
         private void OnUpdate(double dt)
         {
 
-            _renderer.Update(dt);
+            _renderer?.Update(dt);
 
         }
 
         private void OnRender(double dt)
         {
 
-            _renderer.Render(dt);
+            _renderer?.Render(dt);
 
         }
 
