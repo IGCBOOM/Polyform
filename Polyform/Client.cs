@@ -23,6 +23,13 @@ namespace Polyform
 
         }
 
+        private void OnResize(Vector2D<int> newSize)
+        {
+
+            _renderer.Resize(newSize);
+
+        }
+
         private void OnUpdate(double dt)
         {
 
@@ -47,6 +54,7 @@ namespace Polyform
             _window = Window.Create(windowOptions);
 
             _window.Load += OnLoad;
+            _window.Resize += OnResize;
             _window.Update += OnUpdate;
             _window.Render += OnRender;
 

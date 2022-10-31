@@ -4,6 +4,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Silk.NET.Maths;
 using Silk.NET.OpenGL;
 using Silk.NET.Windowing;
 
@@ -22,6 +23,13 @@ namespace Polyform.Rendering
 
             _gl = GL.GetApi(_window);
             _gl.ClearColor(Color.AliceBlue);
+
+        }
+
+        internal void Resize(Vector2D<int> newSize)
+        {
+
+            _gl.Viewport(newSize);
 
         }
 
