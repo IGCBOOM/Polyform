@@ -24,7 +24,7 @@ namespace Polyform
 
             IInputContext input = _window.CreateInput();
 
-            input.Keyboards[0].IsKeyPressed();
+            Input.Init(input);
 
         }
 
@@ -37,6 +37,8 @@ namespace Polyform
 
         private void OnUpdate(double dt)
         {
+
+            Input.Update();
 
             _renderer.Update(dt);
 
