@@ -13,9 +13,9 @@ namespace Polyform
     internal class Client
     {
 
-        private IWindow _window;
+        private readonly IWindow _window;
         
-        private Renderer _renderer;
+        private Renderer? _renderer;
 
         private void OnLoad()
         {
@@ -24,30 +24,28 @@ namespace Polyform
 
             IInputContext input = _window.CreateInput();
 
-            Input.Init(input);
+            input.Keyboards[0].IsKeyPressed();
 
         }
 
         private void OnResize(Vector2D<int> newSize)
         {
 
-            _renderer.Resize(newSize);
+            _renderer?.Resize(newSize);
 
         }
 
         private void OnUpdate(double dt)
         {
 
-            Input.Update();
-
-            _renderer.Update(dt);
+            _renderer?.Update(dt);
 
         }
 
         private void OnRender(double dt)
         {
 
-            _renderer.Render(dt);
+            _renderer?.Render(dt);
 
         }
 
