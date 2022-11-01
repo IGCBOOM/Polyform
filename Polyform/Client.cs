@@ -24,8 +24,6 @@ namespace Polyform
 
             IInputContext input = _window.CreateInput();
 
-            input.Keyboards[0].IsKeyPressed();
-
         }
 
         private void OnResize(Vector2D<int> newSize)
@@ -38,6 +36,7 @@ namespace Polyform
         private void OnUpdate(double dt)
         {
 
+            Input.Update();
             _renderer?.Update(dt);
 
         }
